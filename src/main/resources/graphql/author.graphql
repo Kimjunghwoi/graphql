@@ -1,0 +1,19 @@
+#type Author {
+#    idx: ID!
+#    name: String!
+#    thumbnail: String!
+#}
+#
+#
+## The Root Query for the application
+#type Query {
+#    getAllAuthors: [Author]
+#    getAuthor(idx: ID): Author
+#}
+#
+## The Root Mutation for the application
+#type Mutation {
+#    createAuthor(name: String!, thumbnail: String!) : Author
+#    updateAuthorName(idx: ID, name: String!) : Author
+#}
+

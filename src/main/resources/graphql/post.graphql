@@ -1,0 +1,33 @@
+
+type Post {
+    idx: ID!
+    title: String!
+    contents: String!
+    category: String!
+    author: Author!
+}
+
+type Author {
+    idx: ID!
+    name: String!
+    thumbnail: String!
+}
+
+# Query 와 Mutation 은 다른곳에서 추가로 만들 수 없는걸로 보임.. 위의 도메인 정의는 파일을 각각 나눠도 읽어짐 분리하자.
+# The Root Query for the application
+type Query {
+    getAllPosts: [Post]
+    getPost(idx: ID): Post
+    getAllAuthors: [Author]
+    getAuthor(idx: ID): Author
+}
+
+# The Root Mutation for the application
+type Mutation {
+    createPost(title: String!, contents: String!, category: String!, authorIdx: ID!) : Post
+    updatePostTitle(idx: ID, title: String!) : Post
+    createAuthor(name: String!, thumbnail: String!) : Author
+    updateAuthorName(idx: ID, name: String!) : Author
+}
+
+
