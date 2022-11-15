@@ -1,0 +1,20 @@
+
+## HTTP Client Now Supports GraphQL
+
+###
+# @name GraphQL over HTTP
+GRAPHQL localhost:8080/graphql
+
+mutation createPostCall($title: String!,$contents: String!, $category: String!, $authorIdx: ID!) {
+  createPost(title: $title, contents: $contents, category: $category, authorIdx: $authorIdx) {
+    title
+    contents
+  }
+}
+
+{
+  "title": "IJ Test",
+  "contents" : "IJ Test",
+  "category" : "IJ Test",
+  "authorIdx" : "0"
+}
